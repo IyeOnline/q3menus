@@ -18,8 +18,8 @@ make
 ```
 
 ### Getting to know the features
-Take a look at "src/main.cpp", for a simple program showing the most basic features.
-I also included "src/damagemenu.cpp", which is the program that should create my fancy weapon select module with a rotating player model and stuff. (note that when i originally created that menu, the lib wasnt nearly as advanced and i basically just wrote items to files. i am fairly sure that i updated it correctly however. at least it compiles and runs...)
+Take a look at "demo/src/main.cpp", for a simple program showing the most basic features.
+I also included "demo/src/damagemenu.cpp", which is the program that should create my fancy weapon select module with a rotating player model and stuff. (note that when i originally created that menu, the lib wasnt nearly as advanced and i basically just wrote items to files. i am fairly sure that i updated it correctly however. at least it compiles and runs...)
 
 ## Documentaion
 
