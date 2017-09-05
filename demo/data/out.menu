@@ -1,0 +1,414 @@
+#include "ui/menudef.h"
+{
+	/* MAIN
+	*/
+
+	
+	/*
+	META:
+	created using q3menus 1.0, a q3 menu file "editor" written in C++ by Iye
+	last update: 03-09-2017 16-59-53
+	#items: 26
+	*/
+	
+	assetGlobalDef {
+				font "fonts/fontImage_40" 40
+				smallFont "fonts/fontImage_30" 30
+				bigFont "fonts/fontImage_50" 50
+		
+				cursor "ui/assets/3_cursor3.tga"		// cursor
+				itemFocusSound "sound/misc/menu2.wav"	// sound for item getting focus (via keyboard or mouse )
+		
+				fadeClamp 1.0							// sets the fadeup alpha
+				fadeCycle 1								// how often fade happens in milliseconds
+				fadeAmount 0.1							// amount to adjust alpha per cycle
+		
+				shadowColor 0.1 0.1 0.1 0.0				// shadow color
+	}
+	
+	menuDef {
+		name "main"
+		fullscreen 0
+		rect 5 2 3 4
+		visible 1
+		style 1
+		background "ui/assets/ut_menuback.jpg"
+		focuscolor 1 1 1 0.9
+		onOpen { uiScript stopRefresh ; uiScript update "ui_GetName"; playlooped "music/mainmenu.wav" }
+		onESC { close main; open quitcredit }
+		
+		itemDef {
+			name "window"
+			rect -5 -5 650 76
+			type 1
+			style 1
+			border 0
+			backcolor 0 0 0 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name "window"
+			rect -5 411 650 76
+			type 1
+			style 1
+			border 0
+			backcolor 0 0 0 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name "ut_logo_graphic"
+			rect 7 7 256 64
+			type 1
+			style 1
+			background "ui/assets/utlogo.tga"
+			border 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name "ui_lines1"
+			rect 0 90 640 64
+			type 1
+			style 1
+			background "ui_lines1"
+			border 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name "ui_lines2"
+			rect 0 262 640 128
+			type 1
+			style 1
+			background "ui_lines2"
+			border 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name "Circle01"
+			rect -170 -300 700 700
+			type 1
+			style 1
+			border 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name "auth_status"
+			rect 0 400 640 40
+			type 1
+			style 1
+			border 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name "menubar_ann_title"
+			rect 10 126 200 24
+			type 1
+			style 1
+			border 1
+			backcolor 0 0 0.55 0.5
+			forecolor 1 1 1 1
+			bordercolor 0.5 0.5 0.5 1
+			visible 1
+			decoration
+			cvarTest "cl_auth_ann_title"
+			hideCvar { "none"  }
+		}
+
+		itemDef {
+			name "menubar_ann_box"
+			rect 10 150 200 211
+			type 1
+			style 1
+			border 1
+			backcolor 0 0 0 0.8
+			bordercolor 0.5 0.5 0.5 1
+			visible 1
+			decoration
+			cvarTest "cl_auth_ann_title"
+			hideCvar { "none"  }
+		}
+
+		itemDef {
+			name "auth_ann_datetime"
+			rect 119 160 200 211
+			type 1
+			style 1
+			border 1
+			visible 1
+			decoration
+			cvarTest "cl_auth_ann_title"
+			hideCvar { "none"  }
+		}
+
+		itemDef {
+			name "auth_ann_msg"
+			rect 0 182 180 180
+			type 1
+			style 1
+			border 1
+			visible 1
+			decoration
+			cvarTest "cl_auth_ann_title"
+			hideCvar { "none"  }
+		}
+
+		itemDef {
+			name "copyright"
+			rect 0 400 640 40
+			type 1
+			style 1
+			border 1
+			visible 1
+			decoration
+			textalign 1
+			
+			textalignx 10
+			textaligny 32
+			textscale 0.200000
+			text "Urban Terror (tm) (c) 2000-2016 Frozen Sand/0870760 B.C. Ltd,"
+		}
+
+		itemDef {
+			name "copyright"
+			rect 0 415 640 40
+			type 1
+			style 1
+			border 1
+			visible 1
+			decoration
+			textalign 1
+			
+			textalignx 10
+			textaligny 32
+			textscale 0.200000
+			text "Quake 3 Arena (c) 2000-2016 id Software, inc. all rights reserved"
+		}
+
+		itemDef {
+			name "version"
+			rect 0 400 640 40
+			type 1
+			style 1
+			border 1
+			visible 1
+			decoration
+			textalign 1
+			
+			textalignx 539
+			textaligny 32
+			textscale 0.200000
+			text "Urban Terror"
+		}
+
+		itemDef {
+			name "version2"
+			rect 0 400 640 40
+			type 1
+			style 1
+			border 1
+			visible 1
+			decoration
+		}
+
+		itemDef {
+			name "menubar"
+			rect 469 126 162 234
+			type 1
+			style 1
+			border 1
+			backcolor 0 0 0 0.8
+			bordercolor 0.5 0.5 0.5 1
+			visible 1
+			decoration
+			mouseEnter { show angle_on ; hide angle }
+			mouseExit { show angle ; hide angle_on }
+		}
+
+		itemDef {
+			name "angle"
+			rect 615 128 16 16
+			type 1
+			style 1
+			background "ui/assets/angle.tga"
+			border 1
+			visible 1
+			decoration
+			cvarTest "name"
+			hideCvar { "New_UrT_Player", "Unnamed Player"  }
+		}
+
+		itemDef {
+			name "angle_on"
+			rect 615 128 16 16
+			type 1
+			style 1
+			background "ui/assets/angle_on.tga"
+			border 1
+			visible 0
+			cvarTest "name"
+			hideCvar { "New_UrT_Player", "Unnamed Player"  }
+			action { play "sound/radio/male/male98.wav" }
+		}
+
+		itemDef {
+			name "namewindow1"
+			rect 0 0 640 480
+			type 1
+			style 1
+			border 1
+			backcolor 0 0 0 1
+			visible 1
+			decoration
+			cvarTest "name"
+			showCvar { "New_UrT_Player", "Unnamed Player"  }
+		}
+
+		itemDef {
+			name "namewindow2"
+			rect 20 123 600 234
+			type 1
+			style 1
+			background "ui/assets/quit_popup.jpg"
+			border 1
+			bordercolor 0.5 0.5 0.5 1
+			visible 1
+			decoration
+			cvarTest "name"
+			showCvar { "New_UrT_Player", "Unnamed Player"  }
+		}
+
+		itemDef {
+			name "namewindow3"
+			rect 30 133 580 215
+			type 1
+			style 1
+			border 1
+			backcolor 0 0 0 0.7
+			bordercolor 0.5 0.5 0.5 1
+			visible 1
+			decoration
+			cvarTest "name"
+			showCvar { "New_UrT_Player", "Unnamed Player"  }
+			textalign 1
+			
+			textalignx 290
+			textaligny 25
+			textscale 0.300000
+			text "First watch the tutorial please:"
+		}
+
+		itemDef {
+			name "playername2"
+			rect 270 173 100 25
+			type 1
+			style 1
+			border 1
+			backcolor 0 0 0 0.7
+			forecolor 1 1 1 1
+			bordercolor 0.5 0.5 0.5 1
+			visible 1
+			cvarTest "name"
+			showCvar { "New_UrT_Player", "Unnamed Player"  }
+			textalign 1
+			
+			textalignx 50
+			textaligny 17
+			textscale 0.250000
+			text "Tutorial"
+			action { play "sound/misc/kcaction.wav"; setcvar com_cameramode "1"; exec "demo tutorial" }
+			mouseEnter { setitemcolor playername2 backcolor 0 0 .55 1 }
+			mouseExit { setitemcolor playername2 backcolor 0 0 0 .7 }
+		}
+
+		itemDef {
+			name "namewindow4"
+			rect 30 136 580 25
+			type 1
+			style 1
+			border 0
+			backcolor 0 0 0 0
+			visible 1
+			decoration
+			cvarTest "name"
+			showCvar { "New_UrT_Player", "Unnamed Player"  }
+			textalign 1
+			
+			textalignx 290
+			textaligny 25
+			textscale 0.400000
+			text "Please set your nick name:"
+		}
+
+		itemDef {
+			name "playername1"
+			rect 55 170 530 50
+			type 1
+			style 1
+			border 1
+			backcolor 0 0 0 0.7
+			forecolor 1 1 1 1
+			bordercolor 1 1 1 1
+			visible 1
+			cvarTest "name"
+			showCvar { "New_UrT_Player", "Unnamed Player"  }
+		}
+
+		itemDef {
+			name "namewindow44"
+			rect 266 234 580 25
+			type 1
+			style 1
+			border 0
+			backcolor 0 0 0 0
+			visible 1
+			decoration
+			cvarTest "name"
+			showCvar { "New_UrT_Player", "Unnamed Player"  }
+			textalign 1
+			
+			textalignx 290
+			textaligny 25
+			textscale 0.300000
+			wrapped
+			text "Do not forget to register an account on www.urbanterror.info - it's free!\r"
+			"Do not forget to register an account on www.urbanterror.info - it's free!\r"
+		}
+
+		itemDef {
+			name "playername3"
+			rect 270 303 100 25
+			type 1
+			style 1
+			border 1
+			backcolor 0 0 0 0.7
+			forecolor 1 1 1 1
+			bordercolor 0.5 0.5 0.5 1
+			visible 1
+			cvarTest "name"
+			showCvar { "New_UrT_Player", "Unnamed Player"  }
+			textalign 1
+			
+			textalignx 50
+			textaligny 17
+			textscale 0.250000
+			text "Continue..."
+			action { play "sound/misc/kcaction.wav"; setcvar com_cameramode "0"; uiScript update "ui_SetName" }
+			mouseEnter { setitemcolor playername3 backcolor 0 0 .55 1 }
+			mouseExit { setitemcolor playername3 backcolor 0 0 0 .7 }
+		}
+
+	}
+}

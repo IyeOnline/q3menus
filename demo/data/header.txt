@@ -1,0 +1,34 @@
+#include "ui/menudef.h"
+{
+
+	/*	CONTROLS MENU
+	Revised by woekele, for 4.0. Slight adjustments, nothing big.
+	*/
+
+	menuDef
+	{
+		name "weapons"
+		visible 1
+		fullscreen 0
+		rect 0 70 490 340
+		focusColor 1 1 1 1
+		style 1
+		border 1
+		onClose
+		{
+			uiScript saveControls
+		}
+		onOpen
+		{
+			setitemcolor fadebox backcolor 0 0 0 1 ;
+			hide grpControls ;
+			show look ;
+			uiScript loadControls
+		}
+
+		onEsc
+		{
+			close control_menu ;
+			close setup_menu ;
+			open main
+		}
